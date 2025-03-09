@@ -1,0 +1,155 @@
+/* Basic Reset & Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Main Header (Red) */
+.main-header {
+    background-color: red;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.game-logo {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.header-right {
+    flex: 1;
+}
+
+/* Character Header (Gray) */
+.character-header {
+    background-color: #e0e0e0;
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.character-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.bank-balance {
+    font-weight: bold;
+}
+
+/* Story Section */
+.story-container {
+    background-color: white;
+    height: 180px;
+    overflow-y: auto;
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+    color: #555;
+}
+
+/* Navigation Bar */
+.nav-bar {
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.nav-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.age-btn {
+    background-color: #28a745;
+    color: white;
+    width: 75px;
+    height: 75px;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.plus-icon {
+    font-size: 24px;
+    line-height: 1;
+}
+
+.age-text {
+    font-size: 14px;
+}
+
+/* Stats Section */
+.stats {
+    background-color: white;
+    padding: 15px;
+    text-align: left;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.stat-bar-bg {
+    flex: 1;
+    background-color: #ddd;
+    height: 10px;
+    margin: 0 10px;
+    border-radius: 5px;
+}
+
+.stat-bar {
+    background-color: #4caf50;
+    height: 100%;
+    border-radius: 5px;
+}
+/* Choices Container Styling */
+#choices-container {
+    background-color: #fff;
+    padding: 15px;
+    border-top: 1px solid #ccc;
+    text-align: center;
+}
+
+#choices-container button {
+    padding: 8px 16px;
+    margin: 5px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}

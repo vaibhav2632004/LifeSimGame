@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Life Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Top Header (Red) -->
+    <header class="main-header">
+        <button class="menu-btn">☰</button>
+        <span class="game-logo">Your Life Simulator</span>
+        <div class="header-right"></div>
+    </header>
+
+    <!-- Second Header (Gray) -->
+    <header class="character-header">
+        <div class="character-info">
+            <span class="avatar">👱‍♂️</span>
+            <span class="char-name">Vaibhav Singh</span>
+        </div>
+        <div class="bank-balance">₹27.54 L</div>
+    </header>
+
+    <!-- Story Section -->
+<div class="story-container">
+    <div id="story">
+        <!-- Initially empty, JavaScript fills this -->
+    </div>
+</div>
+
+<!-- Choices Section -->
+<div id="choices-container" style="display:none;">
+    <p id="choice-text"></p>
+    <button id="choice-yes">Yes</button>
+    <button id="choice-no">No</button>
+</div>
+
+
+    <!-- Navigation Buttons -->
+    <nav class="nav-bar">
+        <button class="nav-btn">💼 Occupation</button>
+        <button class="nav-btn">💰 Assets</button>
+
+        <button class="age-btn">
+            <div class="plus-icon">+</div>
+            <div class="age-text">Age</div>
+        </button>
+
+        <button class="nav-btn">💙 Relationships</button>
+        <button class="nav-btn">⚡ Activities</button>
+    </nav>
+
+    <!-- Stats Section -->
+    <div class="stats">
+        <div class="stat">
+            😊 Happiness
+            <div class="stat-bar-bg">
+                <div class="stat-bar" style="width:80%;"></div>
+            </div>
+            <span>80%</span>
+        </div>
+
+        <div class="stat">
+            ❤️ Health
+            <div class="stat-bar-bg">
+                <div class="stat-bar" style="width:75%;"></div>
+            </div>
+            <span>75%</span>
+        </div>
+
+        <div class="stat">
+            💡 Smarts
+            <div class="stat-bar-bg">
+                <div class="stat-bar" style="width:90%;"></div>
+            </div>
+            <span>90%</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+	<script src="AIzaSyAX3ZlBoLFFa5FOv2KrRC48ahMmvdwrkFY"></script>
+</body>
+
+</html>
