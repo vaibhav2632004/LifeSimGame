@@ -35,7 +35,7 @@ body {
 /* Game Container Code */
 .game-container {
     width: 100vw; /* Use full viewport width to remove side margins */
-    height: 100vh; /* Use full viewport height to remove top/bottom margins */
+    height: 90vh; /* Use full viewport height to remove top/bottom margins */
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Maintain original spacing */
@@ -208,7 +208,7 @@ body {
 .story-container {
     background-color: #f5f5f5; /* Light gray background */
     width: 99%;
-    height: 60vh; /* Set fixed height to ensure full size from start */
+    height: 68vh; /* Set fixed height to ensure full size from start */
     overflow-y: auto; /* Enable vertical scrolling */
     padding: 10px;
     font-size: 14px;
@@ -218,7 +218,7 @@ body {
 
 /* Story Text Code */
 #story {
-    font-size: 9px;
+    font-size: 7px;
 }
 
 /* ========================================= */
@@ -247,7 +247,7 @@ body {
 /* Navigation Divider Code */
 .nav-divider {
     width: 1px;
-    height: 40px;
+    height: 37px;
     background-color: #ccc; /* Gray line */
 }
 
@@ -287,7 +287,7 @@ body {
 .nav-text {
     font-size: 8px; /* Slightly smaller */
     font-weight: bold; /* Bold text */
-    margin-top: 5px;
+    margin-top: 3px;
     color: #333;
 }
 
@@ -295,8 +295,8 @@ body {
 .nav-btn-container:nth-child(1) .occupation-btn {
     background-color: #000000; /* Black background for the circle */
     color: white;
-    width: 6vh;
-    height: 6vh;
+    width: 5vh;
+    height: 5vh;
     border: none;
     border-radius: 50%;
     display: flex;
@@ -337,8 +337,8 @@ body {
 .nav-btn-container:nth-child(3) .assets-btn {
     background-color: #000000; /* Black background for the circle */
     color: white;
-    width: 6vh;
-    height: 6vh;
+    width: 5vh;
+    height: 5vh;
     border: none;
     border-radius: 50%;
     display: flex;
@@ -387,8 +387,8 @@ body {
 .age-btn {
     background-color: #28a745; /* Green background as in the image */
     color: white;
-    width: 13vh; /* Larger to fill the orange box */
-    height: 13vh; /* Larger to fill the orange box */
+    width: 12vh; /* Larger to fill the orange box */
+    height: 12vh; /* Larger to fill the orange box */
     /* MODIFIED: Added white border */
     border: 2px solid white;
     border-radius: 50%;
@@ -435,8 +435,8 @@ body {
 .age-decrease-btn {
     background-color: #dc3545; /* Red to match the image */
     color: white;
-    width: 6vh;
-    height: 6vh;
+    width: 5vh;
+    height: 5vh;
     border: 2px solid white;
     border-radius: 50%;
     display: flex;
@@ -485,8 +485,8 @@ body {
 .nav-btn-container:nth-child(7) .relationships-btn {
     background-color: #000000; /* Black background for the circle */
     color: white;
-    width: 6vh;
-    height: 6vh;
+    width: 5vh;
+    height: 5vh;
     border: none;
     border-radius: 50%;
     display: flex;
@@ -527,8 +527,8 @@ body {
 .nav-btn-container:nth-child(9) .activities-btn {
     background-color: #000000; /* Black background for the circle */
     color: white;
-    width: 6vh;
-    height: 6vh;
+    width: 5vh;
+    height: 5vh;
     border: none;
     border-radius: 50%;
     display: flex;
@@ -565,7 +565,7 @@ body {
 /* Stats Container Code */
 .stats {
     background-color: white; /* Keep the background white */
-    padding: 30px;
+    padding: 25px;
     width: 100%; /* Stretch to full width to cover any gaps */
     margin: 0; /* Remove margin to ensure it touches the edges */
     display: flex;
@@ -594,7 +594,7 @@ body {
 .smarts-stat .stat-label,
 .looks-stat .stat-label,
 .charisma-stat .stat-label {
-    font-size: 12px;
+    font-size: 9px;
     color: #000; /* Change to black */
     flex: 0 0 25%; /* Fixed width for labels to align them */
 }
@@ -626,6 +626,54 @@ body {
     padding-right: 5px;
     background-color: #4caf50; /* Green for all bars by default */
 }
+/* Uniform Green Color for All Stat Bars */
+.happiness-stat .stat-bar,
+.health-stat .stat-bar,
+.smarts-stat .stat-bar,
+.looks-stat .stat-bar {
+    background-color: #4caf50; /* Uniform green color */
+}
+
+/* Hide Charisma Stat */
+.charisma-stat {
+    display: none; /* Removes Charisma stat without changing HTML/JavaScript */
+}
+
+/* Improve Alignment and Symmetry */
+.happiness-stat,
+.health-stat,
+.smarts-stat,
+.looks-stat {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Aligns content to the left initially */
+    width: 90%; /* Matches existing width */
+}
+
+.happiness-stat .stat-label,
+.health-stat .stat-label,
+.smarts-stat .stat-label,
+.looks-stat .stat-label {
+    flex: 0 0 30%; /* Fixed width for labels (adjust as needed) */
+    font-size: 9px;
+    color: #000;
+    text-align: right; /* Aligns text to the right within the fixed width */
+    margin-right: 5px; /* Small gap between label and emoji */
+}
+
+.happiness-stat .stat-value,
+.health-stat .stat-value,
+.smarts-stat .stat-value,
+.looks-stat .stat-value {
+    margin-left: 5px; /* Keeps gap between bar and percentage */
+}
+
+/* Center Stats Section with Balanced Spacing */
+.stats {
+    padding: 33px; /* Equal spacing on all sides */
+    max-width: 78%; /* Prevents stretching on large screens */
+    margin: 0 auto; /* Centers the stats section */
+}
 
 /* Stat Value Code */
 .happiness-stat .stat-value,
@@ -633,11 +681,12 @@ body {
 .smarts-stat .stat-value,
 .looks-stat .stat-value,
 .charisma-stat .stat-value {
-    font-size: 12px;
+    font-size: 9px;
     color: #000; /* Black text for better visibility */
     font-weight: bold;
     margin-left: 5px; /* Adds a small gap between the bar and the percentage */
 }
+
 
 /* ========================================= */
 /* SECTION 7: CHOICES CONTAINER SECTION */
@@ -659,151 +708,4 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    z-index: 10;
-    animation: fadeIn 0.5s ease-in;
-}
-
-/* Choices Container Fade-In Animation Code */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translate(-50%, -60%); }
-    to { opacity: 1; transform: translate(-50%, -50%); }
-}
-
-/* Choice Text Code */
-#choice-text {
-    font-size: 16px;
-    text-align: center;
-    margin: 0;
-}
-
-/* Yes Button Code */
-#yes-btn {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 12px;
-    width: 100%;
-    text-align: center;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-/* Yes Button Hover Effect Code */
-#yes-btn:hover {
-    background-color: #e04e2b;
-    transform: translateY(-2px);
-}
-
-/* No Button Code */
-#no-btn {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 12px;
-    width: 100%;
-    text-align: center;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-/* No Button Hover Effect Code */
-#no-btn:hover {
-    background-color: #e04e2b;
-    transform: translateY(-2px);
-}
-
-/* ========================================= */
-/* SECTION 8: NAME MODAL SECTION */
-/* ========================================= */
-
-/* Name Modal Container Code */
-.name-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5) !important; /* Force semi-transparent background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Ensure it’s above everything */
-}
-
-/* Name Modal Content Code */
-.name-modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 400px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    box-sizing: border-box;
-    z-index: 1001; /* Ensure content is above the overlay */
-}
-
-/* Name Modal Title Code */
-.name-modal-title {
-    font-size: 20px;
-    margin-bottom: 15px;
-    color: #333;
-}
-
-/* Name Input Code */
-.player-name-input {
-    width: 90%;
-    padding: 10px;
-    font-size: 16px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-/* Name Submit Button Code */
-.name-submit-btn {
-    background-color: #28a745;
-    color: white;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-/* Name Submit Button Hover Effect Code */
-.name-submit-btn:hover {
-    background-color: #218838;
-}
-
-/* Responsive adjustments for mobile */
-@media (max-width: 600px) {
-    .name-modal-content {
-        width: 90%;
-        padding: 15px;
-    }
-
-    .name-modal-title {
-        font-size: 18px;
-    }
-
-    .player-name-input {
-        font-size: 14px;
-    }
-
-    .name-submit-btn {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-}
-/* ========== */
+    box-shadow: 0
