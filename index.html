@@ -6,44 +6,30 @@
     <title>Your Life Simulator</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <!-- ✅ NAME INPUT MODAL (Popup for entering player name) -->
     <div class="name-modal" id="name-modal">
-        <!-- ✅ NAME MODAL CONTENT (Container for the input form) -->
         <div class="name-modal-content">
-            <!-- ✅ NAME MODAL TITLE (Title of the modal) -->
             <h2 class="name-modal-title">Welcome to Your Life Simulator</h2>
-            <!-- ✅ NAME INPUT (Input field for player name) -->
             <input type="text" id="player-name-input" class="player-name-input" placeholder="Enter your name">
-            <!-- ✅ NAME SUBMIT BUTTON (Button to submit the name) -->
             <button id="name-submit-btn" class="name-submit-btn">Start Game</button>
         </div>
     </div>
 
     <!-- ✅ GAME CONTAINER (Main container for the game) -->
     <div class="game-container">
-        
         <!-- ✅ RED HEADER (Top red header with game title) -->
         <header class="main-header">
-            <!-- ✅ MENU BUTTON (Top left ☰ button) -->
             <button id="menu-btn" class="menu-btn">☰</button>
-            <!-- ✅ GAME LOGO (Custom design representing the game) -->
-            <span class="game-logo-icon">YLS</span> <!-- Text-based logo using initials -->
-            <!-- ✅ GAME NAME (Stylish written game name) -->
+            <span class="game-logo-icon">YLS</span>
             <span class="game-logo-name">your<br>life<br>simulator</span>
-            
-            <!-- ✅ HEADER RIGHT (Empty space on the right of the header) -->
             <div class="header-right"></div>
         </header>
 
         <!-- ✅ CHARACTER HEADER (Gray header with character info) -->
         <header class="character-header">
-            <!-- ✅ CHARACTER INFO (Container for avatar and name) -->
             <div class="character-info">
-                <!-- ✅ AVATAR (Character emoji) -->
                 <span class="avatar">🧑</span>
-                <!-- ✅ CHARACTER NAME (Name of the character) -->
                 <div class="char-name-container">
                     <span class="char-name" id="char-name">Vaibhav Singh</span>
                     <div class="tag-separator">
@@ -52,7 +38,6 @@
                     <span class="life-tag" id="life-tag">Child</span>
                 </div>
             </div>
-            <!-- ✅ BANK BALANCE (Money display) -->
             <div class="bank-balance-container">
                 <span class="bank-amount">₹27.54 L</span>
                 <span class="bank-label">Bank Balance</span>
@@ -61,23 +46,18 @@
 
         <!-- ✅ STORY SECTION (Where the story text appears) -->
         <div class="story-container">
-            <!-- ✅ STORY TEXT (Dynamic story content) -->
             <div id="story"></div>
         </div>
 
         <!-- ✅ CHOICES CONTAINER (Box for Yes/No choices) -->
         <div class="choices-container" style="display: none;">
-            <!-- ✅ CHOICE TEXT (Text for the choice question) -->
             <p id="choice-text"></p>
-            <!-- ✅ YES BUTTON (Choice box Yes button) -->
             <button class="choice-btn" id="yes-btn">Yes</button>
-            <!-- ✅ NO BUTTON (Choice box No button) -->
             <button class="choice-btn" id="no-btn">No</button>
         </div>
 
         <!-- ✅ NAVIGATION BAR (Container for the navigation buttons) -->
         <nav class="nav-bar">
-            <!-- ✅ OCCUPATION BUTTON -->
             <div class="nav-btn-container">
                 <button class="nav-btn occupation-btn">
                     <div class="nav-icon">💼</div>
@@ -85,7 +65,6 @@
                 <span class="nav-text">Occupation</span>
             </div>
             <div class="nav-divider"></div>
-            <!-- ✅ ASSETS BUTTON -->
             <div class="nav-btn-container">
                 <button class="nav-btn assets-btn">
                     <div class="nav-icon">💰</div>
@@ -93,19 +72,17 @@
                 <span class="nav-text">Assets</span>
             </div>
             <div class="nav-divider"></div>
-            <!-- ✅ AGE BUTTON CONTAINER -->
             <div class="age-btn-container">
                 <button class="age-btn">
                     <div class="nav-icon">+</div>
-                    <div class="nav-text">AGE</div> <!-- Changed to uppercase "AGE" to match the image -->
+                    <div class="nav-text">AGE</div>
                 </button>
                 <button class="age-decrease-btn">
                     <div class="nav-icon">-</div>
-                    <div class="nav-text">AGE</div> <!-- Added "AGE" text inside the button -->
+                    <div class="nav-text">AGE</div>
                 </button>
             </div>
             <div class="nav-divider"></div>
-            <!-- ✅ RELATIONSHIPS BUTTON -->
             <div class="nav-btn-container">
                 <button class="nav-btn relationships-btn">
                     <div class="nav-icon">❤️</div>
@@ -113,10 +90,9 @@
                 <span class="nav-text">Relationships</span>
             </div>
             <div class="nav-divider"></div>
-            <!-- ✅ ACTIVITIES BUTTON -->
             <div class="nav-btn-container">
                 <button class="nav-btn activities-btn">
-                    <div class="nav-icon">…</div> <!-- Changed to Unicode ellipsis for white color -->
+                    <div class="nav-icon">…</div>
                 </button>
                 <span class="nav-text">Activities</span>
             </div>
@@ -124,7 +100,6 @@
 
         <!-- ✅ STATS SECTION (Container for all stats) -->
         <div class="stats">
-            <!-- ✅ HAPPINESS STAT -->
             <div class="stat happiness-stat">
                 <span class="stat-label">Happiness 😊</span>
                 <div class="stat-bar-bg happiness-bar-bg">
@@ -133,7 +108,6 @@
                     </div>
                 </div>
             </div>
-            <!-- ✅ HEALTH STAT -->
             <div class="stat health-stat">
                 <span class="stat-label">Health ❤️</span>
                 <div class="stat-bar-bg health-bar-bg">
@@ -142,7 +116,6 @@
                     </div>
                 </div>
             </div>
-            <!-- ✅ SMARTS STAT -->
             <div class="stat smarts-stat">
                 <span class="stat-label">Smarts 💡</span>
                 <div class="stat-bar-bg smarts-bar-bg">
@@ -151,7 +124,6 @@
                     </div>
                 </div>
             </div>
-            <!-- ✅ LOOKS STAT -->
             <div class="stat looks-stat">
                 <span class="stat-label">Looks 🔥</span>
                 <div class="stat-bar-bg looks-bar-bg">
