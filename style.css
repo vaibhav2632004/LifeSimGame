@@ -1,6 +1,24 @@
+/* Ensure the body and html take up the full viewport */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrolling while modal is active */
+}
+
+/* Hide game container when modal is visible */
+body.modal-active .game-container {
+    display: none !important; /* Hide game content while modal is active */
+}
 /* ========================================= */
 /* SECTION 0: BODY SECTION */
 /* ========================================= */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 
 /* Body Code */
 body {
@@ -31,8 +49,6 @@ body {
 /* ========================================= */
 /* SECTION 2: RED HEADER SECTION */
 /* ========================================= */
-
-/* SECTION 2: RED HEADER SECTION */
 
 /* Red Header Container Code */
 .main-header {
@@ -100,8 +116,6 @@ body {
 /* ========================================= */
 /* SECTION 3: CHARACTER HEADER SECTION */
 /* ========================================= */
-
-/* SECTION 3: CHARACTER HEADER SECTION */
 
 /* Character Header Container Code */
 .character-header {
@@ -190,8 +204,6 @@ body {
 /* SECTION 4: STORY SECTION */
 /* ========================================= */
 
-/* SECTION 4: STORY SECTION */
-
 /* Story Container Code */
 .story-container {
     background-color: #f5f5f5; /* Light gray background */
@@ -244,7 +256,7 @@ body {
     background-color: #000000; /* Black background for the circle */
     color: white;
     width: 4vh;
-    height: 10vh;
+    height: 4vh; /* Changed from 10vh to 4vh for consistency */
     border: none;
     border-radius: 50%;
     display: flex;
@@ -550,10 +562,6 @@ body {
 /* SECTION 6: STATS SECTION */
 /* ========================================= */
 
-/* SECTION 6: STATS SECTION */
-
-/* SECTION 6: STATS SECTION */
-
 /* Stats Container Code */
 .stats {
     background-color: white; /* Keep the background white */
@@ -713,15 +721,4 @@ body {
     transform: translateY(-2px);
 }
 
-/* ========================================= */
-/* SECTION 8: NAME INPUT MODAL SECTION */
-/* ========================================= */
-
-/* Name Modal Container Code */
-.name-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0
+/* ==========
