@@ -1,244 +1,727 @@
-/* Basic Reset & Styles */
+/* ========================================= */
+/* SECTION 0: BODY SECTION */
+/* ========================================= */
+
+/* Body Code */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+    margin: 0; /* Remove default browser margins */
+    padding: 0; /* Remove default browser padding */
+    background-color: white; /* Set a consistent white background */
+    overflow: hidden; /* Prevent any scrollbars from creating gaps */
 }
 
-/* Main Header (Red) */
+/* ========================================= */
+/* SECTION 1: GAME CONTAINER SECTION */
+/* ========================================= */
+
+/* Game Container Code */
+.game-container {
+    width: 100vw; /* Use full viewport width to remove side margins */
+    height: 100vh; /* Use full viewport height to remove top/bottom margins */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Maintain original spacing */
+    align-items: center;
+    overflow: hidden; /* Prevents scrolling */
+    background-color: white; /* Change to white */
+    margin: 0; /* Ensure no margins */
+    padding: 0; /* Ensure no padding */
+}
+
+/* ========================================= */
+/* SECTION 2: RED HEADER SECTION */
+/* ========================================= */
+
+/* SECTION 2: RED HEADER SECTION */
+
+/* Red Header Container Code */
 .main-header {
     background-color: red;
     color: white;
     display: flex;
     align-items: center;
-    padding: 10px;
+    justify-content: flex-start; /* Align all items to the left */
+    padding: 8px 12px; /* Consistent padding */
+    font-size: 18px;
+    height: 8vh;
+    width: 100%; /* Full width of the screen */
+    margin-left: 0; /* Ensure it starts from the left edge */
 }
 
+/* Menu Button Code */
 .menu-btn {
     background: none;
     border: none;
     color: white;
-    font-size: 24px;
-    margin-right: 10px;
+    font-size: 24px; /* Largest size for menu icon */
     cursor: pointer;
+    margin-right: 8px; /* Spacing between menu button and logo */
 }
 
-.game-logo {
-    font-size: 18px;
+/* Game Logo Icon Code */
+.game-logo-icon {
+    font-family: 'Montserrat', sans-serif; /* Modern font for the logo */
+    font-size: 10px; /* Smaller than menu icon */
+    font-weight: bold; /* Bold for emphasis */
+    color: #ffd700; /* Gold color for the text */
+    background-color: #ffffff; /* White background for the logo circle */
+    border: 2px solid #ffd700; /* Gold border */
+    border-radius: 50%; /* Circular shape */
+    width: 20px; /* Smaller than menu icon */
+    height: 20px; /* Smaller than menu icon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 6px; /* Reduced spacing between logo and game name */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    background-image: linear-gradient(to bottom, #ffffff, #f0f0f0); /* Subtle gradient for polish */
+}
+
+/* Game Logo Name Code */
+.game-logo-name {
+    font-size: 10px; /* Reduced size to fit three lines in 8vh */
+    font-family: 'Pacifico', cursive; /* Stylish cursive font */
+    color: #fffacd; /* Light golden color to match the logo */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); /* Shadow for smaller size */
     font-weight: bold;
+    letter-spacing: 0.3px; /* Minimal spacing for vertical text */
+    line-height: 1; /* Tight line spacing for vertical alignment */
+    display: flex;
+    flex-direction: column; /* Stack lines vertically */
+    align-items: flex-start; /* Align text to the left */
 }
 
+/* Header Right Code */
 .header-right {
-    flex: 1;
+    width: 0; /* Remove any width to avoid stretching */
+    margin-left: 0; /* Remove margin to prevent pushing content */
 }
 
-/* Character Header (Gray) */
+/* ========================================= */
+/* SECTION 3: CHARACTER HEADER SECTION */
+/* ========================================= */
+
+/* SECTION 3: CHARACTER HEADER SECTION */
+
+/* Character Header Container Code */
 .character-header {
-    background-color: #e0e0e0;
-    padding: 8px 12px;
+    background-color: transparent; /* Already set to remove gray background */
+    padding: 4px 8px; /* Reduced padding to fit content in 4vh */
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 14px;
+    height: 4vh;
+    width: 98%; /* Already set to stretch across the full width */
 }
 
+/* Character Info Container Code */
 .character-info {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px; /* Reduced gap between avatar and name container */
 }
 
-.bank-balance {
+/* Avatar Code */
+.avatar {
+    font-size: 18px; /* Slightly reduced to fit layout */
+    color: #333; /* Darker color for a realistic look */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Character Name Container Code */
+.char-name-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center; /* Center vertically within the header */
+}
+
+/* Character Name Code */
+.char-name {
+    font-size: 12px; /* Reduced size to fit vertical layout */
+    margin-bottom: 1px; /* Minimal space before the line */
+}
+
+/* Tag Separator Code */
+.tag-separator {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1px; /* Minimal space before the tag */
+}
+
+/* Tag Line Code */
+.tag-line {
+    border: none;
+    height: 1px;
+    background-color: #333; /* Sleek line color */
+    width: 20px; /* Short, sleek line */
+    margin: 0;
+}
+
+/* Life Tag Code */
+.life-tag {
+    font-size: 8px; /* Smaller tag text to fit */
+    color: #555; /* Subdued color for tag */
     font-weight: bold;
 }
 
-/* Story Section */
-.story-container {
-    background-color: white;
-    height: 180px;
-    overflow-y: auto;
-    padding: 15px;
-    border-bottom: 1px solid #ccc;
-    text-align: left;
-    color: #555;
+/* Bank Balance Container Code */
+.bank-balance-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align to the right */
 }
 
-/* Navigation Bar */
+/* Bank Amount Code */
+.bank-amount {
+    font-size: 12px; /* Reduced size to match vertical layout */
+    margin-bottom: 1px; /* Reduced space before the label */
+}
+
+/* Bank Label Code */
+.bank-label {
+    font-size: 8px; /* Smaller label text to match life tag */
+    color: #555; /* Subdued color for label */
+    font-weight: bold;
+}
+
+/* ========================================= */
+/* SECTION 4: STORY SECTION */
+/* ========================================= */
+
+/* SECTION 4: STORY SECTION */
+
+/* Story Container Code */
+.story-container {
+    background-color: #f5f5f5; /* Light gray background */
+    width: 99%;
+    height: 60vh; /* Set fixed height to ensure full size from start */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 10px;
+    font-size: 14px;
+    text-align: left;
+    box-sizing: border-box; /* Include padding in height calculation */
+}
+
+/* Story Text Code */
+#story {
+    font-size: 9px;
+}
+
+/* ========================================= */
+/* SECTION 5: NAVIGATION BAR (ORANGE BOX) SECTION */
+/* ========================================= */
+
+/* Orange Box Container Code */
 .nav-bar {
-    background-color: white;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
+    padding: 0;
+    width: 100%; /* Ensure full width */
+    background-color: #ff8c00 !important; /* Keep orange background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a shadow for depth */
 }
 
+/* Navigation Button Container Code */
+.nav-btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent; /* Ensure no inherited gray background */
+}
+
+/* Navigation Divider Code */
+.nav-divider {
+    width: 1px;
+    height: 40px;
+    background-color: #ccc; /* Gray line */
+}
+
+/* General Navigation Button Code */
 .nav-btn {
-    background-color: #007bff;
+    background-color: #000000; /* Black background for the circle */
     color: white;
+    width: 4vh;
+    height: 10vh;
     border: none;
-    padding: 8px 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 14px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
-.age-btn {
-    background-color: #28a745;
+/* General Navigation Button Hover Effect Code */
+.nav-btn:hover {
+    transform: scale(1.1);
+    background-color: #333333; /* Slightly lighter black on hover */
+}
+
+/* Navigation Icon Code */
+.nav-icon {
+    font-size: 20px;
+}
+
+/* Style for Activities Ellipsis Code */
+.activities-btn .nav-icon {
+    color: white; /* White ellipsis for Activities */
+}
+
+/* Navigation Text Code */
+.nav-text {
+    font-size: 8px; /* Slightly smaller */
+    font-weight: bold; /* Bold text */
+    margin-top: 5px;
+    color: #333;
+}
+
+/* Occupation Button Code */
+.nav-btn-container:nth-child(1) .occupation-btn {
+    background-color: #000000; /* Black background for the circle */
     color: white;
-    width: 75px;
-    height: 75px;
+    width: 6vh;
+    height: 6vh;
     border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+/* Occupation Button Hover Effect Code */
+.nav-btn-container:nth-child(1) .occupation-btn:hover {
+    transform: scale(1.1);
+    background-color: #333333; /* Slightly lighter black on hover */
+}
+
+/* Occupation Button Icon Code */
+.nav-btn-container:nth-child(1) .nav-icon {
+    font-size: 20px;
+}
+
+/* Occupation Button Text Code */
+.nav-btn-container:nth-child(1) .nav-text {
+    font-size: 8px; /* Slightly smaller */
+    font-weight: bold; /* Bold text */
+    margin-top: 5px;
+    color: #333;
+}
+
+/* Divider One Code */
+.nav-divider:nth-child(2) {
+    width: 1px;
+    height: 40px;
+    background-color: #ccc; /* Gray line */
+}
+
+/* Assets Button Code */
+.nav-btn-container:nth-child(3) .assets-btn {
+    background-color: #000000; /* Black background for the circle */
+    color: white;
+    width: 6vh;
+    height: 6vh;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+/* Assets Button Hover Effect Code */
+.nav-btn-container:nth-child(3) .assets-btn:hover {
+    transform: scale(1.1);
+    background-color: #333333; /* Slightly lighter black on hover */
+}
+
+/* Assets Button Icon Code */
+.nav-btn-container:nth-child(3) .nav-icon {
+    font-size: 20px;
+}
+
+/* Assets Button Text Code */
+.nav-btn-container:nth-child(3) .nav-text {
+    font-size: 8px; /* Slightly smaller */
+    font-weight: bold; /* Bold text */
+    margin-top: 5px;
+    color: #333;
+}
+
+/* Divider Two Code */
+.nav-divider:nth-child(4) {
+    width: 1px;
+    height: 40px;
+    background-color: #ccc; /* Gray line */
+}
+
+/* Age Button Container Code */
+.age-btn-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Age Button Code */
+.age-btn {
+    background-color: #28a745; /* Green background as in the image */
+    color: white;
+    width: 13vh; /* Larger to fill the orange box */
+    height: 13vh; /* Larger to fill the orange box */
+    /* MODIFIED: Added white border */
+    border: 2px solid white;
     border-radius: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-.plus-icon {
     font-size: 24px;
-    line-height: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    /* NEW: Added z-index to ensure layering */
+    z-index: 1;
 }
 
-.age-text {
-    font-size: 14px;
+/* Age Button Hover Effect Code */
+.age-btn:hover {
+    transform: scale(1.1);
+    background-color: #e04e2b; /* Red on hover as in previous design */
+    animation: pulse 0.5s infinite;
 }
 
-/* Stats Section */
+/* Age Button Pulsing Animation Code */
+@keyframes pulse {
+    0% { transform: scale(1.1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1.1); }
+}
+
+/* Age Button Icon Code */
+.age-btn .nav-icon {
+    font-size: 38px;
+}
+
+/* Age Button Text Code */
+.age-btn .nav-text {
+    /* MODIFIED: Adjusted styling to place text inside the button */
+    font-size: 12px; /* Slightly larger for visibility */
+    font-weight: bold;
+    margin-top: 5px;
+    color: white; /* White to match the image */
+}
+
+/* Age Minus Button Code */
+.age-decrease-btn {
+    background-color: #dc3545; /* Red to match the image */
+    color: white;
+    width: 6vh;
+    height: 6vh;
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    position: absolute;
+    right: -15px; /* Position to the right, partially overlapping */
+    bottom: -15px; /* MODIFIED: Moved lower to avoid overlapping the divider */
+    z-index: 2;
+}
+
+/* Age Minus Button Hover Effect Code */
+.age-decrease-btn:hover {
+    /* MODIFIED: Changed hover color to a darker red */
+    background-color: #c82333; /* Darker red on hover */
+    transform: scale(1.1);
+}
+
+/* Age Minus Button Icon Code */
+.age-decrease-btn .nav-icon {
+    /* NEW: Adjusted font size for the minus icon */
+    font-size: 16px;
+}
+
+/* Age Minus Button Text Code */
+.age-decrease-btn .nav-text {
+    /* NEW: Added styling for the "AGE" text inside the button */
+    font-size: 8px;
+    font-weight: bold;
+    margin-top: 2px;
+    color: white;
+}
+
+/* Divider Three Code */
+.nav-divider:nth-child(6) {
+    width: 1px;
+    height: 40px;
+    background-color: #ccc; /* Gray line */
+}
+
+/* Relationships Button Code */
+.nav-btn-container:nth-child(7) .relationships-btn {
+    background-color: #000000; /* Black background for the circle */
+    color: white;
+    width: 6vh;
+    height: 6vh;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+/* Relationships Button Hover Effect Code */
+.nav-btn-container:nth-child(7) .relationships-btn:hover {
+    transform: scale(1.1);
+    background-color: #333333; /* Slightly lighter black on hover */
+}
+
+/* Relationships Button Icon Code */
+.nav-btn-container:nth-child(7) .nav-icon {
+    font-size: 20px;
+}
+
+/* Relationships Button Text Code */
+.nav-btn-container:nth-child(7) .nav-text {
+    font-size: 8px; /* Slightly smaller */
+    font-weight: bold; /* Bold text */
+    margin-top: 5px;
+    color: #333;
+}
+
+/* Divider Four Code */
+.nav-divider:nth-child(8) {
+    width: 1px;
+    height: 40px;
+    background-color: #ccc; /* Gray line */
+}
+
+/* Activities Button Code */
+.nav-btn-container:nth-child(9) .activities-btn {
+    background-color: #000000; /* Black background for the circle */
+    color: white;
+    width: 6vh;
+    height: 6vh;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+/* Activities Button Hover Effect Code */
+.nav-btn-container:nth-child(9) .activities-btn:hover {
+    transform: scale(1.1);
+    background-color: #333333; /* Slightly lighter black on hover */
+}
+
+/* Activities Button Icon Code */
+.activities-btn .nav-icon {
+    color: white; /* White ellipsis for Activities */
+}
+
+/* Activities Button Text Code */
+.nav-btn-container:nth-child(9) .nav-text {
+    font-size: 8px; /* Slightly smaller */
+    font-weight: bold; /* Bold text */
+    margin-top: 5px;
+    color: #333;
+}
+
+/* ========================================= */
+/* SECTION 6: STATS SECTION */
+/* ========================================= */
+
+/* SECTION 6: STATS SECTION */
+
+/* SECTION 6: STATS SECTION */
+
+/* Stats Container Code */
 .stats {
-    background-color: white;
-    padding: 15px;
-    text-align: left;
+    background-color: white; /* Keep the background white */
+    padding: 30px;
+    width: 100%; /* Stretch to full width to cover any gaps */
+    margin: 0; /* Remove margin to ensure it touches the edges */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the child stat items */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-.stat {
+/* General Stat Container Code (for Happiness, Health, Smarts, etc.) */
+.happiness-stat,
+.health-stat,
+.smarts-stat,
+.looks-stat,
+.charisma-stat {
     display: flex;
     align-items: center;
-    margin-bottom: 8px;
-    font-size: 14px;
+    justify-content: center; /* Centers the stat content horizontally */
+    margin-bottom: 10px; /* Increase spacing between stats */
+    width: 90%; /* Consistent width for all stat bars */
+    text-align: left; /* Aligns text to the left within the centered container */
 }
 
-.stat-bar-bg {
-    flex: 1;
+/* Stat Label Code */
+.happiness-stat .stat-label,
+.health-stat .stat-label,
+.smarts-stat .stat-label,
+.looks-stat .stat-label,
+.charisma-stat .stat-label {
+    font-size: 12px;
+    color: #000; /* Change to black */
+    flex: 0 0 25%; /* Fixed width for labels to align them */
+}
+
+/* Stat Bar Background Code */
+.happiness-stat .stat-bar-bg,
+.health-stat .stat-bar-bg,
+.smarts-stat .stat-bar-bg,
+.looks-stat .stat-bar-bg,
+.charisma-stat .stat-bar-bg {
+    flex: 1; /* Takes up the remaining space */
     background-color: #ddd;
-    height: 10px;
-    margin: 0 10px;
+    height: 10px; /* Consistent height for all bars */
     border-radius: 5px;
+    position: relative;
 }
 
-.stat-bar {
-    background-color: #4caf50;
+/* Stat Bar Code (Colored Bar Inside Background) */
+.happiness-stat .stat-bar,
+.health-stat .stat-bar,
+.smarts-stat .stat-bar,
+.looks-stat .stat-bar,
+.charisma-stat .stat-bar {
     height: 100%;
     border-radius: 5px;
-}
-/* Choices Container Styling */
-#choices-container {
-    background-color: #fff;
-    padding: 15px;
-    border-top: 1px solid #ccc;
-    text-align: center;
-}
-
-#choices-container button {
-    padding: 8px 16px;
-    margin: 5px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
-}
-/* ✅ Make Game Fully Responsive for Mobile Screens */
-
-/* Ensure the game scales correctly on small screens */
-body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-/* ✅ Fix Story Section for Mobile */
-.story-container {
-    max-height: 200px; /* Prevents large overflow */
-    overflow-y: auto; /* Enables scrolling */
-    font-size: 14px; /* Adjust text size for mobile */
-    padding: 10px;
-}
-
-/* ✅ Adjust Navigation Buttons for Mobile */
-.nav-bar {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 10px;
-}
-
-.nav-btn {
-    flex: 1 1 30%;
-    margin: 5px;
-    font-size: 12px;
-    padding: 8px;
-}
-
-/* ✅ Make Stats Section Fit Mobile Screens */
-.stats {
-    display: flex;
-    flex-direction: column; /* Stack stats vertically on small screens */
     align-items: center;
-    padding: 10px;
+    justify-content: flex-end;
+    padding-right: 5px;
+    background-color: #4caf50; /* Green for all bars by default */
 }
 
-.stat {
-    width: 90%;
-    text-align: center;
-    font-size: 14px;
+/* Stat Value Code */
+.happiness-stat .stat-value,
+.health-stat .stat-value,
+.smarts-stat .stat-value,
+.looks-stat .stat-value,
+.charisma-stat .stat-value {
+    font-size: 12px;
+    color: #000; /* Black text for better visibility */
+    font-weight: bold;
+    margin-left: 5px; /* Adds a small gap between the bar and the percentage */
 }
 
-/* ✅ Optimize the Age Button */
-.age-btn {
-    font-size: 16px;
-    padding: 10px 20px;
-    width: 80%;
-    max-width: 200px;
-}
+/* ========================================= */
+/* SECTION 7: CHOICES CONTAINER SECTION */
+/* ========================================= */
 
-/* ✅ Make Headers Fit Smaller Screens */
-.main-header {
+/* Choices Container Code */
+.choices-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border: 3px solid #28a745;
+    border-radius: 12px; /* Reduced from 15px for a more square look */
+    padding: 10px; /* Reduced from 12px to 10px for a smaller, squarer size */
+    width: 55%; /* Reduced from 60% to 55% for a slightly smaller size */
+    max-width: 180px; /* Reduced from 200px to 180px for a slightly smaller size */
     display: flex;
-    justify-content: space-between;
-    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    animation: fadeIn 0.5s ease-in;
+}
+
+/* Choices Container Fade-In Animation Code */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, -60%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* Choice Text Code */
+#choice-text {
     font-size: 16px;
+    text-align: center;
+    margin: 0;
 }
 
-.character-header {
-    font-size: 14px;
-    padding: 8px;
+/* Yes Button Code */
+#yes-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* ✅ Responsive Design (Media Queries) */
-@media screen and (max-width: 600px) {
-    /* Shrink text and buttons on very small screens */
-    .nav-btn {
-        flex: 1 1 45%;
-        font-size: 10px;
-        padding: 6px;
-    }
-
-    .age-btn {
-        font-size: 14px;
-        padding: 8px 15px;
-    }
-
-    .story-container {
-        font-size: 12px;
-        max-height: 180px;
-    }
-
-    .stats {
-        font-size: 12px;
-    }
+/* Yes Button Hover Effect Code */
+#yes-btn:hover {
+    background-color: #e04e2b;
+    transform: translateY(-2px);
 }
+
+/* No Button Code */
+#no-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* No Button Hover Effect Code */
+#no-btn:hover {
+    background-color: #e04e2b;
+    transform: translateY(-2px);
+}
+
+/* ========================================= */
+/* SECTION 8: NAME INPUT MODAL SECTION */
+/* ========================================= */
+
+/* Name Modal Container Code */
+.name-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0
