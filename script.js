@@ -1,5 +1,7 @@
-// ✅ INITIAL SETUP (Variables and element selections)
 document.addEventListener("DOMContentLoaded", function () {
+    // Add modal-active class to body to hide game content initially
+    document.body.classList.add("modal-active");
+
     let age = 0;
     let eventIndex = 0;
     let happiness = 80, health = 75, smarts = 90, looks = 99; // Initial stat values with Looks added
@@ -167,72 +169,72 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // ✅ FUNCTION: NEXT EVENT (Handles aging and events)
-function nextEvent() {
-    if (!eventsByAge[age]) {
-        addStory("A quiet year passed.");
-        age++;
-        eventIndex = 0;
-        currentAgeHeaderAdded = false; // Reset header flag for new age
-        updateLifeTag(); // Update life tag based on new age
-        return;
-    }
-
-    if (eventIndex >= eventsByAge[age].length) {
-        age++;
-        eventIndex = 0;
-        currentAgeHeaderAdded = false; // Reset header flag for new age
-        // If there's no event for the new age, skip to the next year
+    function nextEvent() {
         if (!eventsByAge[age]) {
             addStory("A quiet year passed.");
             age++;
             eventIndex = 0;
             currentAgeHeaderAdded = false; // Reset header flag for new age
+            updateLifeTag(); // Update life tag based on new age
+            return;
         }
+
+        if (eventIndex >= eventsByAge[age].length) {
+            age++;
+            eventIndex = 0;
+            currentAgeHeaderAdded = false; // Reset header flag for new age
+            // If there's no event for the new age, skip to the next year
+            if (!eventsByAge[age]) {
+                addStory("A quiet year passed.");
+                age++;
+                eventIndex = 0;
+                currentAgeHeaderAdded = false; // Reset header flag for new age
+            }
+            updateLifeTag(); // Update life tag based on new age
+            return;
+        }
+
+        const event = eventsByAge[age][eventIndex++];
+        if (!event) {
+            addStory("Nothing special happened this year.");
+            return;
+        }
+
+        if (event.choice) {
+            choiceText.textContent = event.text; // Use text as is
+            choicesContainer.style.display = "block";
+        } else {
+            addStory(event.text);
+            updateStats(event.stats);
+        }
+        updateLifeTag(); // Update life tag after each event
+    }
+
+    // ✅ FUNCTION: PREVIOUS EVENT (Handles decreasing age)
+    function previousEvent() {
+        if (age <= 0) {
+            addStory("You can't go back any further!");
+            return;
+        }
+
+        age--;
+        eventIndex = 0; // Reset event index when going back
+        currentAgeHeaderAdded = false; // Reset header flag for new age
+        addStory("You went back a year.");
         updateLifeTag(); // Update life tag based on new age
-        return;
     }
 
-    const event = eventsByAge[age][eventIndex++];
-    if (!event) {
-        addStory("Nothing special happened this year.");
-        return;
+    // ✅ FUNCTION: UPDATE LIFE TAG (Dynamically set life tag based on age)
+    function updateLifeTag() {
+        const lifeTag = document.getElementById("life-tag");
+        if (age <= 5) {
+            lifeTag.textContent = "Child";
+        } else if (age <= 18) {
+            lifeTag.textContent = "Student";
+        } else {
+            lifeTag.textContent = "Adult";
+        }
     }
-
-    if (event.choice) {
-        choiceText.textContent = event.text; // Use text as is
-        choicesContainer.style.display = "block";
-    } else {
-        addStory(event.text);
-        updateStats(event.stats);
-    }
-    updateLifeTag(); // Update life tag after each event
-}
-
-// ✅ FUNCTION: PREVIOUS EVENT (Handles decreasing age)
-function previousEvent() {
-    if (age <= 0) {
-        addStory("You can't go back any further!");
-        return;
-    }
-
-    age--;
-    eventIndex = 0; // Reset event index when going back
-    currentAgeHeaderAdded = false; // Reset header flag for new age
-    addStory("You went back a year.");
-    updateLifeTag(); // Update life tag based on new age
-}
-
-// ✅ FUNCTION: UPDATE LIFE TAG (Dynamically set life tag based on age)
-function updateLifeTag() {
-    const lifeTag = document.getElementById("life-tag");
-    if (age <= 5) {
-        lifeTag.textContent = "Child";
-    } else if (age <= 18) {
-        lifeTag.textContent = "Student";
-    } else {
-        lifeTag.textContent = "Adult";
-    }
-}
 
     // ✅ EVENT LISTENER FOR NAME SUBMIT BUTTON
     nameSubmitBtn.onclick = function () {
@@ -245,6 +247,8 @@ function updateLifeTag() {
             charName.textContent = playerName; // Update the character name in the header
             console.log("Character name updated in header"); // Debug: Confirm header update
             nameModal.style.display = "none"; // Hide the modal
+            // Remove modal-active class to show game content
+            document.body.classList.remove("modal-active");
             console.log("Modal hidden"); // Debug: Confirm modal hidden
             // Start the game after the name is submitted
             addStory(eventsByAge[0][0].text);
